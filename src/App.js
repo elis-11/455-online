@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./App.scss";
 
 function App() {
-  const [links, setLinks] = useState;
+  const [links, setLinks] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(" ");
+      const response = await fetch("https://raw.githubusercontent.com/elis-11/online-links/main/src/data/links.json");
       const data = await response.json();
       setLinks(data);
     })();
