@@ -1,8 +1,8 @@
 [
-	{
+{
 		"name": "Edward",
 		"linksUrl": "https://raw.githubusercontent.com/edwardtanguay/testfbwd01linksedward/main/src/data/links.json"
-	},
+},
 {
 	"name": "Renat",
 	"linksUrl": "https://raw.githubusercontent.com/Khambazarov/netlify_linkssharing/main/src/data/links.json"
@@ -37,7 +37,7 @@
 ,
 
 {
-	"name": "Edward-2",
+	"name": "Edward",
 	"linksUrl": "https://raw.githubusercontent.com/edwardtanguay/fbwd01linksedward/main/src/data/links.json"
 }
 ,
