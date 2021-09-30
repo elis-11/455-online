@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from "react";
+import feeds from "./data/feeds.json";
 import "./App.scss";
 
 function App() {
   const [links, setLinks] = useState([]);
 
   useEffect(() => {
-    (async () => {
-      const response = await fetch("https://raw.githubusercontent.com/elis-11/online-links/main/src/data/links.json");
-      const data = await response.json();
-      setLinks(data);
-    })();
-  });
-
+    feeds.forEach((feed) => {
+      (async () => {
+        const response = await fetch(
+          // "https://raw.githubusercontent.com/elis-11/online-links/main/src/data/links.json"
+          feed.linksUrl
+        );
+        const tempLinks = await response.json();
+        tempLinks.forEach((tempLink=> tempLink.origin = feed.name));
+        setLinks((n) => [...n, ...tempLinks]);
+      })();
+    });
+  }, []);
   return (
     <div className="App">
       <h1>Links</h1>
@@ -19,9 +25,11 @@ function App() {
         {links.map((link, index) => {
           return (
             <li key={index}>
+              {" "}
               <a target="_blank" href={link.url} rel="noreferrer">
                 {link.title}
               </a>
+              - (from {link.origin})
             </li>
           );
         })}
