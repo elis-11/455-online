@@ -1,7 +1,17 @@
-import links from "./data/links.json";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 
 function App() {
+  const [links, setLinks] = useState;
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(" ");
+      const data = await response.json();
+      setLinks(data);
+    })();
+  });
+
   return (
     <div className="App">
       <h1>Links</h1>
