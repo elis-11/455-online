@@ -21,7 +21,6 @@ function App() {
   return (
     <div className="App">
       <h1>Links</h1>
-      <h1>Links</h1>
       <ul>
         {links.map((link, index) => {
           return (
